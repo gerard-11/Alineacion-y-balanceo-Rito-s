@@ -1,0 +1,100 @@
+[
+  {
+    "id": "prod-001",
+    "sku": "TIR-205-55-16-MIC",
+    "name": "Llanta 205/55R16 Michelin Energy Saver",
+    "price": 1850,
+    "category": "tires",
+    "brand": "Michelin",
+    "unit": "piece",
+    "taxRate": 0.16,
+    "active": true,
+    "attributes": {
+      "width": 205,
+      "profile": 55,
+      "rim": 16,
+      "speed_index": "H",
+      "load_index": 91
+    }
+  },
+  {
+    "id": "prod-002",
+    "sku": "TIR-195-65-15-BRI",
+    "name": "Llanta 195/65R15 Bridgestone Ecopia",
+    "price": 1450,
+    "category": "tires",
+    "brand": "Bridgestone",
+    "unit": "piece",
+    "taxRate": 0.16,
+    "active": true,
+    "attributes": {
+      "width": 195,
+      "profile": 65,
+      "rim": 15,
+      "speed_index": "T",
+      "load_index": 89
+    }
+  },
+  {
+    "id": "prod-003",
+    "sku": "TIR-225-45-17-CON",
+    "name": "Llanta 225/45R17 Continental SportContact",
+    "price": 2200,
+    "category": "tires",
+    "brand": "Continental",
+    "unit": "piece",
+    "taxRate": 0.16,
+    "active": true,
+    "attributes": {
+      "width": 225,
+      "profile": 45,
+      "rim": 17,
+      "speed_index": "W",
+      "load_index": 94
+    }
+  },
+  {
+    "id": "prod-004",
+    "sku": "OIL-5W30-4L-MOB",
+    "name": "Aceite Mobil 1 5W30 Sintético",
+    "price": 650,
+    "category": "oil",
+    "brand": "Mobil",
+    "unit": "set",
+    "taxRate": 0.16,
+    "active": true,
+    "attributes": {
+      "viscosity": "5W30",
+      "liters": 4,
+      "type": "synthetic"
+    }
+  },
+  {
+    "id": "prod-005",
+    "sku": "OIL-10W40-4L-PEN",
+    "name": "Aceite Pennzoil 10W40 Semi-Sintético",
+    "price": 420,
+    "category": "oil",
+    "brand": "Pennzoil",
+    "unit": "set",
+    "taxRate": 0.16,
+    "active": true,
+    "attributes": {
+      "viscosity": "10W40",
+      "liters": 4,
+      "type": "semi-synthetic"
+    }
+  },
+  {
+    "id": "prod-006",
+    "sku": "ACC-VALV-001",
+    "name": "Válvula de Inflado Cromada",
+    "price": 45,
+    "category": "accessories",
+    "brand": "Generic",
+    "unit": "piece",
+    "taxRate": 0.16,
+    "active": true,
+    "attributes": {}
+  }
+]

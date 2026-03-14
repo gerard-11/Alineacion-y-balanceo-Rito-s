@@ -1,0 +1,6 @@
+export { storeProductsService } from './storeProducts'
+export { storeServicesService } from './storeServices'
+export { clientsService } from './clients'
+export { inventoryService } from './inventory'
+export { salesService } from './sales'
+export { historyService } from './history'

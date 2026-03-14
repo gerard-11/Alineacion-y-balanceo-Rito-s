@@ -1,0 +1,42 @@
+[
+  {
+    "id": "cli-001",
+    "firstName": "Carlos",
+    "lastName": "Ramírez",
+    "phone": "555-1234",
+    "email": "carlos.ramirez@email.com",
+    "rfc": "RAMC850101ABC",
+    "address": "Av. Juárez 123, Col. Centro",
+    "notes": "Cliente frecuente"
+  },
+  {
+    "id": "cli-002",
+    "firstName": "María",
+    "lastName": "López",
+    "phone": "555-5678",
+    "email": null,
+    "rfc": null,
+    "address": "Calle Morelos 45",
+    "notes": ""
+  },
+  {
+    "id": "cli-003",
+    "firstName": "Roberto",
+    "lastName": "Hernández",
+    "phone": "555-9012",
+    "email": "roberto.h@gmail.com",
+    "rfc": null,
+    "address": "Blvd. Torres 890, Col. Las Flores",
+    "notes": "Tiene flota de 3 camionetas"
+  },
+  {
+    "id": "cli-004",
+    "firstName": "Ana",
+    "lastName": "Martínez",
+    "phone": "555-3456",
+    "email": "ana.martinez@empresa.com",
+    "rfc": "MARA920315XYZ",
+    "address": "Av. Insurgentes 567",
+    "notes": ""
+  }
+]

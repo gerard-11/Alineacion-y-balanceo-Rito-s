@@ -1,0 +1,52 @@
+[
+  {
+    "id": "svc-001",
+    "code": "alignment",
+    "name": "Alineación",
+    "description": "Alineación computarizada de 4 ruedas",
+    "price": 350,
+    "taxRate": 0.16,
+    "durationMinutes": 30,
+    "active": true
+  },
+  {
+    "id": "svc-002",
+    "code": "balancing",
+    "name": "Balanceo",
+    "description": "Balanceo dinámico por rueda",
+    "price": 80,
+    "taxRate": 0.16,
+    "durationMinutes": 15,
+    "active": true
+  },
+  {
+    "id": "svc-003",
+    "code": "tire_calibration",
+    "name": "Calibración de Llantas",
+    "description": "Revisión y ajuste de presión en las 4 ruedas",
+    "price": 50,
+    "taxRate": 0.16,
+    "durationMinutes": 10,
+    "active": true
+  },
+  {
+    "id": "svc-004",
+    "code": "oil_change",
+    "name": "Cambio de Aceite",
+    "description": "Cambio de aceite y filtro",
+    "price": 250,
+    "taxRate": 0.16,
+    "durationMinutes": 45,
+    "active": true
+  },
+  {
+    "id": "svc-005",
+    "code": "brake_service",
+    "name": "Servicio de Frenos",
+    "description": "Revisión y ajuste de sistema de frenos",
+    "price": 500,
+    "taxRate": 0.16,
+    "durationMinutes": 60,
+    "active": true
+  }
+]

@@ -1,9 +1,9 @@
-export default function StatCard({ title, value, subtitle, accentColor = '#ff6b35' }) {
+export default function StatCard({ title, value, subtitle }) {
   return (
-    <div style={{ backgroundColor: '#2a2a2a', borderLeft: `5px solid ${accentColor}` }} className="shadow-2xl p-8">
-      <h3 className="text-xs font-bold text-gray-400 tracking-widest">{title}</h3>
-      <p className="text-5xl font-bold mt-4 text-white font-mono">{value}</p>
-      <p className="text-gray-500 mt-4 text-xs tracking-wider">◆ {subtitle}</p>
+    <div className="bg-slate-900 rounded-xl border border-slate-800 p-6">
+      <p className="text-xs font-medium text-slate-400 uppercase tracking-wider">{title}</p>
+      <p className="text-4xl font-bold text-indigo-400 mt-3 font-mono">{value}</p>
+      {subtitle && <p className="text-slate-500 text-sm mt-2">{subtitle}</p>}
     </div>
   )
 }

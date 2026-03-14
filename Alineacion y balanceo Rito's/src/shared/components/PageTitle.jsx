@@ -1,5 +1,5 @@
 export default function PageTitle({ title }) {
   return (
-    <h2 className="text-3xl font-bold text-white mb-8 tracking-wider">▸ {title}</h2>
+    <h1 className="text-2xl font-semibold text-white">{title}</h1>
   )
 }

@@ -1,88 +1,64 @@
 import { Link, useLocation } from 'react-router-dom'
+import {
+  ArchiveBoxIcon,
+  WrenchScrewdriverIcon,
+  UsersIcon,
+  ClipboardDocumentListIcon,
+  ShoppingCartIcon,
+  ClockIcon,
+} from '@heroicons/react/24/outline'
+
+const navLinks = [
+  { to: '/ventas',      label: 'Ventas',      Icon: ShoppingCartIcon },
+  { to: '/productos',   label: 'Productos',   Icon: ArchiveBoxIcon },
+  { to: '/servicios',   label: 'Servicios',   Icon: WrenchScrewdriverIcon },
+  { to: '/inventario',  label: 'Inventario',  Icon: ClipboardDocumentListIcon },
+  { to: '/historial',   label: 'Historial',   Icon: ClockIcon },
+  { to: '/clientes',    label: 'Clientes',    Icon: UsersIcon },
+]
 
 export default function MainLayout({ children }) {
   const location = useLocation()
-
   const isActive = (path) => location.pathname === path
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#0f0f0f' }}>
-      {/* Header - Industrial Style */}
-      <header style={{ backgroundColor: '#1a1a1a', borderBottom: '3px solid #ff6b35' }} className="shadow-2xl">
-        <div className="max-w-7xl mx-auto px-6 py-8">
-          <h1 className="text-5xl font-bold text-white tracking-wider">ALINEACIÓN Y BALANCEO RITO'S</h1>
-          <p className="text-gray-400 mt-3 text-sm font-mono tracking-widest">◆ DASHBOARD DE GESTIÓN</p>
-        </div>
-      </header>
-
-      {/* Navigation - Industrial Style */}
-      <nav style={{ backgroundColor: '#1a1a1a', borderBottom: '2px solid #444444' }} className="sticky top-0 z-10">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex space-x-0">
-            <Link
-              to="/ventas"
-              className={`px-6 py-4 font-bold transition-all border-b-3 text-sm tracking-wider no-underline ${
-                isActive('/ventas')
-                  ? 'text-white'
-                  : 'text-gray-500 hover:text-gray-300'
-              }`}
-              style={{
-                borderBottomColor: isActive('/ventas') ? '#ff6b35' : 'transparent',
-                backgroundColor: isActive('/ventas') ? '#2a2a2a' : 'transparent'
-              }}
-            >
-              ▸ VENTAS
-            </Link>
-            <Link
-              to="/alineacion"
-              className={`px-6 py-4 font-bold transition-all border-b-3 text-sm tracking-wider no-underline ${
-                isActive('/alineacion')
-                  ? 'text-white'
-                  : 'text-gray-500 hover:text-gray-300'
-              }`}
-              style={{
-                borderBottomColor: isActive('/alineacion') ? '#ff6b35' : 'transparent',
-                backgroundColor: isActive('/alineacion') ? '#2a2a2a' : 'transparent'
-              }}
-            >
-              ▸ ALINEACIÓN
-            </Link>
-            <Link
-              to="/balanceo"
-              className={`px-6 py-4 font-bold transition-all border-b-3 text-sm tracking-wider no-underline ${
-                isActive('/balanceo')
-                  ? 'text-white'
-                  : 'text-gray-500 hover:text-gray-300'
-              }`}
-              style={{
-                borderBottomColor: isActive('/balanceo') ? '#ff6b35' : 'transparent',
-                backgroundColor: isActive('/balanceo') ? '#2a2a2a' : 'transparent'
-              }}
-            >
-              ▸ BALANCEO
-            </Link>
-            <Link
-              to="/llantas"
-              className={`px-6 py-4 font-bold transition-all border-b-3 text-sm tracking-wider no-underline ${
-                isActive('/llantas')
-                  ? 'text-white'
-                  : 'text-gray-500 hover:text-gray-300'
-              }`}
-              style={{
-                borderBottomColor: isActive('/llantas') ? '#ff6b35' : 'transparent',
-                backgroundColor: isActive('/llantas') ? '#2a2a2a' : 'transparent'
-              }}
-            >
-              ▸ LLANTAS
-            </Link>
+    <div className="flex min-h-screen bg-slate-950">
+      {/* Sidebar */}
+      <aside className="w-64 shrink-0 bg-slate-900 border-r border-slate-800 flex flex-col">
+        {/* Logo */}
+        <div className="px-6 py-6 border-b border-slate-800">
+          <div className="flex items-center gap-2">
+            <span className="text-indigo-500 text-xl">◆</span>
+            <div>
+              <p className="text-white font-bold text-sm leading-tight">RITO'S</p>
+              <p className="text-slate-500 text-xs leading-tight">Alineación y Balanceo</p>
+            </div>
           </div>
         </div>
-      </nav>
 
-      {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-6 py-12">
+        {/* Nav */}
+        <nav className="flex-1 px-3 py-4 space-y-1">
+          {navLinks.map(({ to, label, Icon }) => (
+            <Link
+              key={to}
+              to={to}
+              className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors no-underline ${
+                isActive(to)
+                  ? 'bg-indigo-600 text-white'
+                  : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800'
+              }`}
+            >
+              <Icon className="w-5 h-5 shrink-0" />
+              {label}
+            </Link>
+          ))}
+        </nav>
+      </aside>
+
+      {/* Main content */}
+      <div className="flex-1 bg-slate-950 min-h-screen overflow-auto">
         {children}
-      </main>
+      </div>
     </div>
   )
 }
