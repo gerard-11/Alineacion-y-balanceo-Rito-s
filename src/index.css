@@ -1,5 +1,34 @@
 @import "tailwindcss";
 
+:root {
+  color-scheme: dark;
+}
+
+:root.light {
+  color-scheme: light;
+}
+
 *, *::before, *::after { box-sizing: border-box; }
-body { margin: 0; background-color: #020617; }
+
+body {
+  margin: 0;
+  transition: background-color 0.2s ease;
+}
+
+body.dark {
+  background-color: #020617;
+}
+
+body.light {
+  background-color: #ffffff;
+}
+
 #root { min-height: 100vh; display: flex; flex-direction: column; }
+
+/* Animación suave de transición */
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    transition-duration: 150ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
