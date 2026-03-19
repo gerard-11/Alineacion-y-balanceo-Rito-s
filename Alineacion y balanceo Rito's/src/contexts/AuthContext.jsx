@@ -1,39 +1,43 @@
-import { createContext, useContext, useState, useEffect } from 'react'
+import { createContext, useContext, useState, useEffect, useMemo } from 'react'
+import { useLocalStorage } from '../shared/hooks/useLocalStorage'
 
 const AuthContext = createContext(null)
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
+  const authStorage = useLocalStorage('authUser')
 
-  // Cargar usuario del localStorage al montar
+  // Load user from localStorage on mount
   useEffect(() => {
-    const storedUser = localStorage.getItem('authUser')
+    const storedUser = authStorage.get()
     if (storedUser) {
-      try {
-        setUser(JSON.parse(storedUser))
-      } catch (error) {
-        console.error('Error parsing stored user:', error)
-        localStorage.removeItem('authUser')
-      }
+      setUser(storedUser)
     }
     setIsLoading(false)
   }, [])
 
   const login = (userData) => {
     setUser(userData)
-    localStorage.setItem('authUser', JSON.stringify(userData))
+    authStorage.set(userData)
   }
 
   const logout = () => {
     setUser(null)
-    localStorage.removeItem('authUser')
+    authStorage.remove()
   }
 
   const isAuthenticated = !!user
 
+  // Wrap context value in useMemo to prevent unnecessary re-renders
+  // of all consumers when parent component re-renders
+  const value = useMemo(
+    () => ({ user, isAuthenticated, isLoading, login, logout }),
+    [user, isAuthenticated, isLoading]
+  )
+
   return (
-    <AuthContext.Provider value={{ user, isAuthenticated, isLoading, login, logout }}>
+    <AuthContext.Provider value={value}>
       {children}
     </AuthContext.Provider>
   )
