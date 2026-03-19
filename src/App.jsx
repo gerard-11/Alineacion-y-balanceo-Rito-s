@@ -3,6 +3,7 @@ import { AuthProvider } from '@contexts/AuthContext'
 import { ProtectedRoute } from '@components/ProtectedRoute'
 import MainLayout from './layouts/MainLayout'
 import LoginPage from '@modules/auth/components/LoginPage'
+import LogoutPage from '@modules/auth/components/LogoutPage'
 import ProductsPage from '@modules/store/components/ProductsPage'
 import ServicesPage from '@modules/store/components/ServicesPage'
 import InventoryPage from '@modules/store/components/InventoryPage'
@@ -13,10 +14,11 @@ import HistoryPage from '@modules/history/components/HistoryPage'
 function AppRoutes() {
   return (
     <Routes>
-      {/* Ruta pública */}
+      {/* Public routes */}
       <Route path="/login" element={<LoginPage />} />
+      <Route path="/logout" element={<LogoutPage />} />
 
-      {/* Rutas protegidas */}
+      {/* Protected routes */}
       <Route
         path="/productos"
         element={
