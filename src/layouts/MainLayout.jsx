@@ -1,4 +1,4 @@
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import {
   ArchiveBoxIcon,
   WrenchScrewdriverIcon,
@@ -21,14 +21,8 @@ const navLinks = [
 
 export default function MainLayout({ children }) {
   const location = useLocation()
-  const navigate = useNavigate()
-  const { user, logout } = useAuth()
+  const { user } = useAuth()
   const isActive = (path) => location.pathname === path
-
-  const handleLogout = () => {
-    logout()
-    navigate('/login', { replace: true })
-  }
 
   return (
     <div className="flex min-h-screen bg-slate-950">
@@ -71,13 +65,13 @@ export default function MainLayout({ children }) {
               <p className="text-sm font-medium text-white truncate">{user.email}</p>
             </div>
           )}
-          <button
-            onClick={handleLogout}
-            className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition-colors"
+          <Link
+            to="/logout"
+            className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition-colors no-underline"
           >
             <ArrowRightOnRectangleIcon className="w-5 h-5 shrink-0" />
             Cerrar sesión
-          </button>
+          </Link>
         </div>
       </aside>
 
