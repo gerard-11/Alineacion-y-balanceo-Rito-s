@@ -1,0 +1,43 @@
+[
+  {
+    "id": "sale-001",
+    "folio": "VTA-2026-001",
+    "createdAt": "2026-03-10T10:30:00Z",
+    "client": { "id": "cli-001", "firstName": "Carlos", "lastName": "Ramírez" },
+    "items": [
+      { "type": "product", "refId": "prod-001", "name": "Llanta 205/55R16 Michelin Energy Saver", "qty": 2, "unitPrice": 1850, "taxRate": 0.16, "subtotal": 3700 },
+      { "type": "service", "refId": "svc-001", "name": "Alineación", "qty": 1, "unitPrice": 350, "taxRate": 0.16, "subtotal": 350 }
+    ],
+    "subtotalAmount": 4050,
+    "taxAmount": 648,
+    "totalAmount": 4698,
+    "status": "completed"
+  },
+  {
+    "id": "sale-002",
+    "folio": "VTA-2026-002",
+    "createdAt": "2026-03-11T14:00:00Z",
+    "client": null,
+    "items": [
+      { "type": "service", "refId": "svc-002", "name": "Balanceo", "qty": 4, "unitPrice": 80, "taxRate": 0.16, "subtotal": 320 }
+    ],
+    "subtotalAmount": 320,
+    "taxAmount": 51.2,
+    "totalAmount": 371.2,
+    "status": "completed"
+  },
+  {
+    "id": "sale-003",
+    "folio": "VTA-2026-003",
+    "createdAt": "2026-03-12T09:15:00Z",
+    "client": { "id": "cli-003", "firstName": "Roberto", "lastName": "Hernández" },
+    "items": [
+      { "type": "product", "refId": "prod-004", "name": "Aceite Mobil 1 5W30 Sintético", "qty": 1, "unitPrice": 650, "taxRate": 0.16, "subtotal": 650 },
+      { "type": "service", "refId": "svc-004", "name": "Cambio de Aceite", "qty": 1, "unitPrice": 250, "taxRate": 0.16, "subtotal": 250 }
+    ],
+    "subtotalAmount": 900,
+    "taxAmount": 144,
+    "totalAmount": 1044,
+    "status": "completed"
+  }
+]

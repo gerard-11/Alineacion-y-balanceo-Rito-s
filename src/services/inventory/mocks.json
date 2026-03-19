@@ -1,0 +1,80 @@
+[
+  {
+    "id": "inv-001",
+    "productId": "prod-001",
+    "productName": "Llanta 205/55R16 Michelin Energy Saver",
+    "sku": "TIR-205-55-16-MIC",
+    "brand": "Michelin",
+    "category": "tires",
+    "stockCurrent": 12,
+    "stockMinimum": 4,
+    "location": "Bodega A",
+    "cost": 1400,
+    "updatedAt": "2026-03-10T08:00:00Z"
+  },
+  {
+    "id": "inv-002",
+    "productId": "prod-002",
+    "productName": "Llanta 195/65R15 Bridgestone Ecopia",
+    "sku": "TIR-195-65-15-BRI",
+    "brand": "Bridgestone",
+    "category": "tires",
+    "stockCurrent": 3,
+    "stockMinimum": 4,
+    "location": "Bodega A",
+    "cost": 1100,
+    "updatedAt": "2026-03-11T09:00:00Z"
+  },
+  {
+    "id": "inv-003",
+    "productId": "prod-003",
+    "productName": "Llanta 225/45R17 Continental SportContact",
+    "sku": "TIR-225-45-17-CON",
+    "brand": "Continental",
+    "category": "tires",
+    "stockCurrent": 8,
+    "stockMinimum": 2,
+    "location": "Bodega A",
+    "cost": 1700,
+    "updatedAt": "2026-03-09T14:00:00Z"
+  },
+  {
+    "id": "inv-004",
+    "productId": "prod-004",
+    "productName": "Aceite Mobil 1 5W30 Sintético",
+    "sku": "OIL-5W30-4L-MOB",
+    "brand": "Mobil",
+    "category": "oil",
+    "stockCurrent": 15,
+    "stockMinimum": 5,
+    "location": "Bodega B",
+    "cost": 480,
+    "updatedAt": "2026-03-12T10:00:00Z"
+  },
+  {
+    "id": "inv-005",
+    "productId": "prod-005",
+    "productName": "Aceite Pennzoil 10W40 Semi-Sintético",
+    "sku": "OIL-10W40-4L-PEN",
+    "brand": "Pennzoil",
+    "category": "oil",
+    "stockCurrent": 2,
+    "stockMinimum": 5,
+    "location": "Bodega B",
+    "cost": 300,
+    "updatedAt": "2026-03-12T10:00:00Z"
+  },
+  {
+    "id": "inv-006",
+    "productId": "prod-006",
+    "productName": "Válvula de Inflado Cromada",
+    "sku": "ACC-VALV-001",
+    "brand": "Generic",
+    "category": "accessories",
+    "stockCurrent": 50,
+    "stockMinimum": 10,
+    "location": "Mostrador",
+    "cost": 20,
+    "updatedAt": "2026-03-01T08:00:00Z"
+  }
+]
