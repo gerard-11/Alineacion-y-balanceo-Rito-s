@@ -16,7 +16,7 @@ export default function LoginPage() {
     setError('')
     setIsLoading(true)
 
-    // Validación básica
+    // Basic validation
     if (!email || !password) {
       setError('Por favor completa todos los campos')
       setIsLoading(false)
@@ -24,11 +24,11 @@ export default function LoginPage() {
     }
 
     try {
-      // TODO: Reemplazar con tu lógica de autenticación real
-      // Ejemplo: hacer una llamada a tu API
+      // TODO: Replace with your real authentication logic
+      // Example: make a call to your API
       // const response = await authService.login({ email, password })
 
-      // Por ahora, simulamos una autenticación exitosa
+      // For now, we simulate a successful authentication
       const userData = {
         id: '1',
         email,
