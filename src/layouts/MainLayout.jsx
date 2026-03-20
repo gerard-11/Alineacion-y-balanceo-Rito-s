@@ -7,6 +7,8 @@ import {
   ShoppingCartIcon,
   ClockIcon,
 } from '@heroicons/react/24/outline'
+import { useTheme } from '@contexts/ThemeContext'
+import { ThemeSwitcher } from '@shared/components'
 
 const navLinks = [
   { to: '/ventas',      label: 'Ventas',      Icon: ShoppingCartIcon },
@@ -19,25 +21,29 @@ const navLinks = [
 
 export default function MainLayout({ children }) {
   const location = useLocation()
+  const { bg, text, border } = useTheme()
   const isActive = (path) => location.pathname === path
 
   return (
-    <div className="flex min-h-screen bg-slate-950">
+    <div className={`flex min-h-screen ${bg.primary}`}>
       {/* Sidebar */}
-      <aside className="w-64 shrink-0 bg-slate-900 border-r border-slate-800 flex flex-col">
+      <aside className={`w-64 shrink-0 ${bg.secondary} border-r ${border} flex flex-col`}>
         {/* Logo */}
-        <div className="px-6 py-6 border-b border-slate-800">
-          <div className="flex items-center gap-2">
-            <span className="text-indigo-500 text-xl">◆</span>
-            <div>
-              <p className="text-white font-bold text-sm leading-tight">RITO'S</p>
-              <p className="text-slate-500 text-xs leading-tight">Alineación y Balanceo</p>
+        <div className={`px-6 py-6 border-b ${border}`}>
+          <div className="flex items-center justify-between gap-2 mb-4">
+            <div className="flex items-center gap-2">
+              <span className="text-indigo-500 text-xl">◆</span>
+              <div>
+                <p className={`${text.primary} font-bold text-sm leading-tight`}>RITO'S</p>
+                <p className={`${text.tertiary} text-xs leading-tight`}>Alineación y Balanceo</p>
+              </div>
             </div>
+            <ThemeSwitcher />
           </div>
         </div>
 
         {/* Nav */}
-        <nav className="flex-1 px-3 py-4 space-y-1">
+        <nav className={`flex-1 px-3 py-4 space-y-1`}>
           {navLinks.map(({ to, label, Icon }) => (
             <Link
               key={to}
@@ -45,7 +51,7 @@ export default function MainLayout({ children }) {
               className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors no-underline ${
                 isActive(to)
                   ? 'bg-indigo-600 text-white'
-                  : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800'
+                  : `${text.tertiary} hover:${text.secondary} hover:${bg.tertiary}`
               }`}
             >
               <Icon className="w-5 h-5 shrink-0" />
@@ -56,7 +62,7 @@ export default function MainLayout({ children }) {
       </aside>
 
       {/* Main content */}
-      <div className="flex-1 bg-slate-950 min-h-screen overflow-auto">
+      <div className={`flex-1 ${bg.primary} min-h-screen overflow-auto`}>
         {children}
       </div>
     </div>
