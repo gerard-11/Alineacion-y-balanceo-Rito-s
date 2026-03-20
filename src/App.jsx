@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import { ThemeProvider } from '@contexts/ThemeContext'
 import { AuthProvider } from '@contexts/AuthContext'
 import { ProtectedRoute } from '@components/ProtectedRoute'
 import MainLayout from './layouts/MainLayout'
@@ -86,10 +87,12 @@ function AppRoutes() {
 
 export default function App() {
   return (
-    <Router>
-      <AuthProvider>
-        <AppRoutes />
-      </AuthProvider>
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <AuthProvider>
+          <AppRoutes />
+        </AuthProvider>
+      </Router>
+    </ThemeProvider>
   )
 }
