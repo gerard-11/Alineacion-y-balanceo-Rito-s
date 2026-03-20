@@ -6,8 +6,10 @@ import InventoryPage from '@modules/store/components/InventoryPage'
 import ClientsPage from '@modules/clients/components/ClientsPage'
 import SalesPage from '@modules/sales/components/SalesPage'
 import HistoryPage from '@modules/history/components/HistoryPage'
+import { AuthProvider } from '@contexts/AuthContext'
+import { ThemeProvider } from '@contexts/ThemeContext'
 
-export default function App() {
+function AppRoutes() {
   return (
     <Router>
       <MainLayout>
@@ -22,5 +24,15 @@ export default function App() {
         </Routes>
       </MainLayout>
     </Router>
+  )
+}
+
+export default function App() {
+  return (
+    <AuthProvider>
+      <ThemeProvider>
+        <AppRoutes />
+      </ThemeProvider>
+    </AuthProvider>
   )
 }
