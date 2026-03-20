@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import { ThemeProvider } from '@contexts/ThemeContext'
 import { AuthProvider } from '@contexts/AuthContext'
 import { ProtectedRoute } from '@components/ProtectedRoute'
 import MainLayout from './layouts/MainLayout'
 import LoginPage from '@modules/auth/components/LoginPage'
-import LogoutPage from '@modules/auth/components/LogoutPage'
 import ProductsPage from '@modules/store/components/ProductsPage'
 import ServicesPage from '@modules/store/components/ServicesPage'
 import InventoryPage from '@modules/store/components/InventoryPage'
@@ -14,11 +14,10 @@ import HistoryPage from '@modules/history/components/HistoryPage'
 function AppRoutes() {
   return (
     <Routes>
-      {/* Public routes */}
+      {/* Ruta pública */}
       <Route path="/login" element={<LoginPage />} />
-      <Route path="/logout" element={<LogoutPage />} />
 
-      {/* Protected routes */}
+      {/* Rutas protegidas */}
       <Route
         path="/productos"
         element={
@@ -88,10 +87,12 @@ function AppRoutes() {
 
 export default function App() {
   return (
-    <Router>
-      <AuthProvider>
-        <AppRoutes />
-      </AuthProvider>
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <AuthProvider>
+          <AppRoutes />
+        </AuthProvider>
+      </Router>
+    </ThemeProvider>
   )
 }
